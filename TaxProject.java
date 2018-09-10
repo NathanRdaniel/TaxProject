@@ -30,23 +30,23 @@ public class TaxProject{
        if (income > 10000 && income < 25000){
            double tier2rate = 0.1;
            tier2Tax = (income - 10000) * tier2rate;
+           incomeTax = tier2Tax;
        }
        if(income > 25000 && income < 75000){
-           double tier3rate = .2;
+           double tier3rate = 0.2;
          double tier3Tax =  (income - 25000) * tier3rate;
          incomeTax = tier3Tax + 1500;
        }
        if(income > 75000 && income < 250000 ){
-        double  t3= income-25000;
-        double  t3tax = t3 * .2;
-        double  t2tax = 15000 * .1;
-        double  t1tax = 10000;
+        double tier4rate = 0.3;
+        double tier4Tax = (income - 75000) * tier4rate;
+           incomeTax = tier4tax + 16500 ;
        }
        if (income > 250000){
-        int rate = 50
+        int tier5rate = 0.5;
+            tier5Tax = (income - 250000) * tier5rate;
+            incomeTax = tier5Tax + 104000;
        }
-       //tier 2
-       //tier 3
        
        
         if(kid <= 2 && kid > 0){
@@ -76,6 +76,8 @@ public class TaxProject{
         }
         System.out.println("Gross Income:")
         System.out.println(income);
+        System.out.println("Gross Income Tax:")
+        System.out.println(incomeTax);
         System.out.println("Age Deductible")
         System.out.println(discount);
         System.out.println("Child stipend:")
